@@ -6,11 +6,13 @@ pool:
   demands: Agent.Name -equals app_linux_agent
 
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+stages:
+  - stage: javainstallation
+    jobs:
+      - job: javainstall
+        steps:
+        - task: JavaToolInstaller@1
+          inputs:
+            versionSpec: '17'
+            jdkArchitectureOption: 'x64'
+            jdkSourceOption: 'PreInstalled'
