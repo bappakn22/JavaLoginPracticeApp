@@ -20,3 +20,9 @@ stages:
               sudo apt install -y openjdk-17-jdk
               java -version
           
+        - task: Bash@3
+          inputs:
+            targetType: 'inline'
+            script: |
+              sudo apt install -y maven
+              mvn -version
