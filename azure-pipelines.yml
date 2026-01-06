@@ -3,8 +3,8 @@ trigger: none
 
 pool:
   name: App_Agent
-  demands:
-    - Agent.Version -equals Linux
+  demands: Agent.Version -equals 2.144.0
+
 
 steps:
 - script: echo Hello, world!
