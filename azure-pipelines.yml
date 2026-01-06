@@ -3,7 +3,7 @@ trigger: none
 
 pool:
   name: App_Agent
-  demands: Agent.Version -equals 2.144.0
+  demands: Agent.Name -equals Linux
 
 
 steps:
