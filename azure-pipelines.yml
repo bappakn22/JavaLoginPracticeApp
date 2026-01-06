@@ -3,7 +3,7 @@ trigger: none
 
 pool:
   name: App_Agent
-  demands: Agent.Name -equals Linux
+  demands: Agent.Name -equals app_linux_agent
 
 
 steps:
