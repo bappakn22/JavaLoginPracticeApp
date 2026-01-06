@@ -11,8 +11,12 @@ stages:
     jobs:
       - job: javainstall
         steps:
-        - task: JavaToolInstaller@1
+        - task: Bash@3
+          displayName: install openjdk
           inputs:
-            versionSpec: '8'
-            jdkArchitectureOption: 'x64'
-            jdkSourceOption: 'PreInstalled'
+            targetType: 'inline'
+            script: |
+              sudo apt update -y
+              sudo apt install -y openjdk-17-jdk
+              java -version
+          
