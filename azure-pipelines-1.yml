@@ -13,10 +13,9 @@ stages:
         steps:
         - task: PowerShell@2
           displayName: stylelint_checking
-          continueOnError: true
           inputs:
             targetType: 'inline'
             script: |
               npm install -g stylelint stylelint-config-standard
               npx stylelint "src/main/webapp/**/*.css" --config "stylelint.config.mjs"
-            workingDirectory: '$(System.DefaultWorkingDirectory)/JavaLoginPracticeApp'
+          
