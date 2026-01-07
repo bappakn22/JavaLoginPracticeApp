@@ -27,3 +27,10 @@ stages:
               npm install -g @biomejs/biome
               biome lint $(System.DefaultWorkingDirectory) --reporter=junit > biomeresult.xml
             workingDirectory: '$(System.DefaultWorkingDirectory)'
+
+        - task: PublishTestResults@2
+          displayName: test result
+          inputs:
+            testResultsFormat: 'JUnit'
+            testResultsFiles: 'biomeresult.xml'
+            testRunTitle: 'biome test'
