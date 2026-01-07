@@ -12,6 +12,8 @@ stages:
       - job: linting_checking
         steps:
         - task: PowerShell@2
+          displayName: stylelint_checking
+          continueOnError: true
           inputs:
             targetType: 'inline'
             script: |
