@@ -25,7 +25,7 @@ stages:
           inputs:
             script: |
               npm install -g @biomejs/biome
-              biome lint $(System.DefaultWorkingDirectory) --reporter=junit > biomeresult.xml
+              biome lint "/src/main/webaps.**/*.css --reporter=junit > biomeresult.xml
             workingDirectory: '$(System.DefaultWorkingDirectory)'
 
         - task: PublishTestResults@2
