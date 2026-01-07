@@ -17,6 +17,6 @@ stages:
           inputs:
             targetType: 'inline'
             script: |
-              npm install -g stylelint-config-standard
-              npx stylelint "src/main/webapp/**/*.css" --config "stylelint.config.mjs"
+              npm install -g stylelint stylelint-config-standard
+              npx stylelint "$(System.DefaultWorkingDirectory)/JavaLoginPracticeApp" --config "stylelint.config.mjs"
             workingDirectory: '$(System.DefaultWorkingDirectory)/JavaLoginPracticeApp'
