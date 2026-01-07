@@ -26,7 +26,7 @@ stages:
             script: |
               npm install -g @biomejs/biome
               biome lint "src/main/webapp/**/*.css" --reporter=junit > biomeresult.xml
-            workingDirectory: '$(System.DefaultWorkingDirectory)/JavaLoginPracticeApp'
+            workingDirectory: '$(System.DefaultWorkingDirectory)'
 
         - task: PublishTestResults@2
           displayName: test result
