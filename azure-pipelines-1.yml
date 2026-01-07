@@ -14,5 +14,7 @@ stages:
         - task: PowerShell@2
           inputs:
             targetType: 'inline'
-            script: 'stylelint "**/*.css"'
+            script: |
+              npm install -g stylelint
+              stylelint "$(System.DefaultWorkingDirectory)/JavaLoginPracticeApp/src/main/webapp" --config "$(System.DefaultWorkingDirectory)/JavaLoginPracticeApp/stylelint.config.mjs"
             workingDirectory: '$(System.DefaultWorkingDirectory)'
