@@ -20,4 +20,7 @@ stages:
               npm install -g stylelint stylelint-config-standard
               npx stylelint "src/main/webapp/**/*.css" --config "stylelint.config.mjs"
 
-          
+        - task: CmdLine@2
+          inputs:
+            script: '''biome lint $(System.DefaultWorkingDirectory) --reporter=junit > biomeresult.xml'''
+            workingDirectory: '$(System.DefaultWorkingDirectory)'
