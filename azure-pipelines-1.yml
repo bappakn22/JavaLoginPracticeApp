@@ -22,5 +22,7 @@ stages:
 
         - task: CmdLine@2
           inputs:
-            script: '''biome lint $(System.DefaultWorkingDirectory) --reporter=junit > biomeresult.xml'''
+            script: |
+              npm install -g @biomejs/biome
+              'biome lint $(System.DefaultWorkingDirectory) --reporter=junit > biomeresult.xml'
             workingDirectory: '$(System.DefaultWorkingDirectory)'
