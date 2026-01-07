@@ -25,8 +25,8 @@ stages:
           inputs:
             script: |
               npm install -g @biomejs/biome
-              biome lint "/src/main/webaps.**/*.css --reporter=junit > biomeresult.xml
-            workingDirectory: '$(System.DefaultWorkingDirectory)'
+              biome lint "$(System.DefaultWorkingDirectory)/JavaLoginPracticeApp" --reporter=junit > biomeresult.xml
+            workingDirectory: '$(System.DefaultWorkingDirectory)/JavaLoginPracticeApp'
 
         - task: PublishTestResults@2
           displayName: test result
