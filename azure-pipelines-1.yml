@@ -2,7 +2,8 @@ trigger: none
 
 
 pool:
-  demands: Agent.Name - equals App_Agent_Server
+ name: App_Agent
+ demands: Agent.Name -equals App_Agent_Server
   
 
 steps:
