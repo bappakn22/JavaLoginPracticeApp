@@ -17,7 +17,7 @@ stages:
           inputs:
             targetType: 'inline'
             script: |
-              npm install -g stylelint stylelint-config-standard stylelint-junit-formatter
-              npx stylelint "src/main/webapp/**/*.css" --config "stylelint.config.mjs" --custom-formatter node_modules/stylelint-junit-formatter --output-file stylelint-report.xml
+              npm install stylelint stylelint-config-standard stylelint-junit-formatter
+              npx stylelint "src/main/webapp/**/*.css" --config "stylelint.config.mjs" --custom-formatter ./node_modules/stylelint-junit-formatter --output-file stylelint-report.xml
 
           
